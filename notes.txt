@@ -1,3 +1,13 @@
+
+------ next task ----------
+
+AAU, index flights
+
+------ notes --------------
+
 i still need to establish a default for airport and date
 
 confirm that  max min are working for flight no
+
+
+consider toString() for date? 
