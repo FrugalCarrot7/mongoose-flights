@@ -1,6 +1,7 @@
 
 ------ next task ----------
-
+AAU, create flights
+--done--
 AAU, index flights
 
 ------ notes --------------

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flights index.ejs</title>
+</head>
+<body>
+    <thead>
+        <tr>
+            <th class="title">Airport</th>
+            <th class="title">Airline</th>
+            <th class="title">Flight no.</th>
+            <th class="title">Date of Dep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% flights.forEach(function(f) { %>
+            <tr>
+                <td><%= f.airport %></td>
+                <td><%= f.airline %></td>
+                <td><%= f.flightNo %></td>
+                <td><%= f.departs %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+    <div>
+        <a href="/">HOME</a>
+    </div>
+</body>
+</html>
