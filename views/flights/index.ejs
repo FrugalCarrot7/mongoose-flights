@@ -7,25 +7,29 @@
     <title>flights index.ejs</title>
 </head>
 <body>
-    <thead>
-        <tr>
-            <th class="title">Airport</th>
-            <th class="title">Airline</th>
-            <th class="title">Flight no.</th>
-            <th class="title">Date of Dep</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% flights.forEach(function(f) { %>
+    <h1>ALL FLIGHTS</h1>
+    <table id="list">    
+        <thead>
             <tr>
-                <td><%= f.airport %></td>
-                <td><%= f.airline %></td>
-                <td><%= f.flightNo %></td>
-                <td><%= f.departs %></td>
+                <th>Airport</th>
+                <th>Airline</th>
+                <th>Flight no.</th>
+                <th>Date of Dep</th>
             </tr>
-        <% }); %>
-    </tbody>
+        </thead>
+        <tbody>
+            <% flights.forEach(function(f){ %>
+                <tr>
+                    <td><%= f.airport %></td>
+                    <td><%= f.airline %></td>
+                    <td><%= f.flightNo %></td>
+                    <td><%= f.departs %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
     <div>
+        <a href="/flights/new">Add Flight</a>
         <a href="/">HOME</a>
     </div>
 </body>

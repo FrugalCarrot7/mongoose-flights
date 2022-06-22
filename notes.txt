@@ -1,10 +1,17 @@
 
 ------ next task ----------
 AAU, create flights
+populate form for  create and then add it.
+
 --done--
 AAU, index flights
 
 ------ notes --------------
+
+Date form does it need an input?
+
+
+
 
 i still need to establish a default for airport and date
 
