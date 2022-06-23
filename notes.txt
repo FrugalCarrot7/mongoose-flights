@@ -1,5 +1,11 @@
 
 ------ next task ----------
+when viewing show. able to add a destination witharrival
+
+--done--
+make a show view by pressing a details link after each flight. 
+
+--done--
 AAU, create flights
 populate form for  create and then add it.
 
@@ -8,7 +14,7 @@ AAU, index flights
 
 ------ notes --------------
 
-Date form does it need an input?
+Date form does it need an input? ---- i dont know still --------
 
 
 

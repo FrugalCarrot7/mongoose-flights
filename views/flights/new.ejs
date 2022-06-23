@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>flights new.ejs</title>
 </head>
 <body>
+    <header>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/flights/new">Add Flight</a>
+            <a href="/flights/">All Flights</a>
+            <a href="/">home again</a>
+          </div>
+    </header>
     <form id="new-flight-form" action="/flights" method="POST">
 
         <label>Airport</label>
@@ -15,7 +24,8 @@
         <input type="text" name="airline">
         <label>Flight No.</label>
         <input type="text" name="flightNo">
-        <label>Date?</label>
+        <label>Date</label>
+        <input type="date" name="departs">
 
         <input type="submit" value="Add Flight">
 

@@ -1,42 +1,47 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-// ------ shortcut for schema above ---------
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema
+
+
+const destinationSchema = new Schema ({
+  airport: {
+    type: String,
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']
+  },
+  arrival: Date
+}, {
+  timestamps: true
+})
 
 const flightSchema = new Schema({
     airline: {
-        type: String,
-        enum: ['American', 'Southwest', 'United']
+      type: String,
+      enum: ['American', 'Southwest', 'United']
     },
     airport: {
-        type: String,
-        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
-        default: 'DEN'
+      type: String,
+      enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+      default: 'DEN'
     },
     flightNo: {
-        type: Number,
-        min: 10,
-        max: 9999
-        // confirm later that max and min work - not done
+      type: Number,
+      min: 10,
+      max: 9999
     },
     departs: {
-        type: Date,
-        default: function() {
+      type: Date,
+      default: function() {
+        let d = new Date();
+        let year = d.getFullYear();
+        let month = d.getMonth();
+        let day = d.getDate();
+        let result = new Date(year + 1, month, day);
+        return result;
+      }
+    },
+    destinations: [destinationSchema]
+  }, {
+    timestamps: true
+  })
 
-            let todaysDate = new Date()
-            let year = todaysDate.getFullYear()
-            let month = todaysDate.getMonth()
-            let day = todaysDate.getDate()
-
-            let dateOfDeparture = new Date(year + 1, month, day)
-
-            return dateOfDeparture
-        }
-        /* default to one year from date created
-            todays date gets a new instance of date
-            getFullYear method returns the year of todays date
-        */
-    }
-
-})
-
-module.exports = mongoose.model('Flight', flightSchema)
+  module.exports = mongoose.model('Flight', flightSchema)

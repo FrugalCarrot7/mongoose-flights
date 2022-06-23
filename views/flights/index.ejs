@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>flights index.ejs</title>
 </head>
 <body>
+    <header>
+        <div class="topnav">
+            <a class="active" href="/">Home</a>
+            <a href="/flights/new">Add Flight</a>
+            <a href="/flights/">All Flights</a>
+            <a href="/">home again</a>
+          </div>
+    </header>
     <h1>ALL FLIGHTS</h1>
     <table id="list">    
         <thead>
@@ -15,6 +24,7 @@
                 <th>Airline</th>
                 <th>Flight no.</th>
                 <th>Date of Dep</th>
+                <th>more</th>
             </tr>
         </thead>
         <tbody>
@@ -24,13 +34,10 @@
                     <td><%= f.airline %></td>
                     <td><%= f.flightNo %></td>
                     <td><%= f.departs %></td>
+                    <td><a href="/flights/<%= f._id %>"><button>Details</button></a></td>
                 </tr>
             <% }); %>
         </tbody>
     </table>
-    <div>
-        <a href="/flights/new">Add Flight</a>
-        <a href="/">HOME</a>
-    </div>
 </body>
 </html>
