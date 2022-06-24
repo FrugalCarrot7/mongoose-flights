@@ -1,5 +1,10 @@
 
 ------ next task ----------
+
+ticket is undefined at controllers for flight. maybe i need to add the ticket schema to the
+ flight schema so it can be accessed?
+
+--done--
 when viewing show. able to add a destination witharrival
 
 --done--

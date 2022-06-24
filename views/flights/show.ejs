@@ -80,6 +80,30 @@
                 <h5>No destination yet!</h5>
               <% } %>
         </div>
+        <div>
+          <h3>Tickets</h3>
+          <a href="/flights/:id/tickets/new"><button>Add Ticket</button></a>
+        </div>  
+        <div>
+          <table>
+            <thead>
+                <th>
+                    Seats
+                </th>
+                <th>
+                    Price
+                </th>
+                
+            </thead>
+            <% tickets.forEach(function(ticket) { %>
+                <tr>
+                    <td><%= ticket.seat %></td>
+                    <td><%= ticket.price %></td>
+                  
+                </tr>
+            <% }) %>
+          </table>
+        </div>
     </main>
 
 </body>

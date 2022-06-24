@@ -1,5 +1,7 @@
 const Flight = require('../models/flight')
 
+const Ticket = require('../models/ticket')
+
 module.exports = {
     index,
     new: newFlight,
@@ -10,7 +12,6 @@ module.exports = {
 
 function index(req, res) {
     Flight.find({}, function(err, flights) {
-        console.log(flights, 'these are flights logged -----------')
         res.render('flights/index', {title: "works", flights})
         // is this the issue?  how to make it an array?   
     })
@@ -27,17 +28,18 @@ function create(req, res) {
         if(err) {
             return res.redirect('/flights/new')
         }
+        console.log(flight, "--this is flight---")
         res.redirect('/flights')
     }) 
 }
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        if(err) {
-            return res.redirect('/flights')
-        }
-        console.log(flight, 'this is flight----------------------')
-        res.render('flights/show', {flight})
+        console.log(flight)
+        Ticket.find({flight: flight._id}, function(err, tickets) {
+            console.log(tickets, '-----THESE ARE TICKETS------')
+            res.render('flights/show', {flight, tickets})
+        })
     })
-    
 }
+    
