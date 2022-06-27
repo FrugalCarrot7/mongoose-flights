@@ -9,8 +9,8 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
-var destinationsRouter = require('./routes/destinations');
-var ticketsRouter = require('./routes/tickets')
+const destinationsRouter = require('./routes/destinations');
+const ticketsRouter = require('./routes/tickets')
 
 var app = express();
 

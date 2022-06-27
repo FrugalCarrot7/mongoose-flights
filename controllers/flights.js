@@ -23,21 +23,19 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
+    console.log(req.body)
     const flight = new Flight(req.body)
     flight.save(err => {
         if(err) {
             return res.redirect('/flights/new')
         }
-        console.log(flight, "--this is flight---")
         res.redirect('/flights')
     }) 
 }
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        console.log(flight)
         Ticket.find({flight: flight._id}, function(err, tickets) {
-            console.log(tickets, '-----THESE ARE TICKETS------')
             res.render('flights/show', {flight, tickets})
         })
     })

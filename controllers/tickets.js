@@ -8,6 +8,7 @@ module.exports = {
 }
 
 function newTicket(req, res) {
+    console.log(req, '--- this is req---')
     res.render('tickets/new', {flightId: req.params.id})
 }
 
@@ -17,4 +18,6 @@ function create(req, res) {
     Ticket.create(req.body, function(err, ticket) {
       res.redirect(`/flights/${flightId}`)
     })
-  }
+}
+
+//I dont think anything is hitting the create controller yet

@@ -10,7 +10,7 @@
 <body>
     <p>there is no nav bar so you better add a ticket</p>
     <h1>Enter Ticket information</h1>
-    <form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+    <form id="add-ticket-form" action="/flights/<%= flightId %>/tickets" method="POST">
         <label>Seat:</label>
         <input name="seat" required pattern="[A-F][1-9]\d?">
         <label>Price:</label>
